@@ -12,6 +12,9 @@
   },
   "keywords": [
   ],
+  "files": [
+    "src/"
+  ],
   "author": "",
   "license": "ISC"
 }
