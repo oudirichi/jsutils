@@ -14,7 +14,7 @@
   "keywords": [
   ],
   "files": [
-    "src/*"
+    "src/**/*"
   ],
   "author": "",
   "license": "ISC"
