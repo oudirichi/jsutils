@@ -5,7 +5,7 @@ function stringTemplate(template, obj) {
 function stringToCharCodeArray(string) {
   const data = [];
   for (let i = 0; i < string.length; i++) {
-    string.charCodeAt(i);
+    data.push(string.charCodeAt(i));
   }
 
   return data;
