@@ -1,0 +1,1 @@
+"use strict";function defer(){var a={},b=new Promise(function(b,c){a.resolve=b,a.reject=c});return a.promise=b,a}module.exports={defer:defer};
