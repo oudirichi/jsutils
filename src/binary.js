@@ -1,12 +1,12 @@
-const { stringToCharCodeArray } = require('./string');
+const { charCode } = require('./string');
 
-function textToBinaryString(string) {
-  const data = stringToCharCodeArray(string).map(e => e.toString(2).padStart(8, 0));
+function toBinary(string, pad = 8) {
+  const data = charCode(string).map(e => e.toString(2).padStart(pad, 0));
 
   return data.join(' ');
 }
 
-function binaryToText(string) {
+function toString(string) {
   return string.split(' ').map(function (char) {
     return String.fromCharCode(parseInt(char, 2));
   }).join('');
@@ -15,6 +15,6 @@ function binaryToText(string) {
 
 
 module.exports = {
-  binaryToText,
-  textToBinaryString,
+  toBinary,
+  toString,
 };

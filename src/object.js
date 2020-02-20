@@ -1,5 +1,5 @@
 function isObject(object) {
-  return typeof objectToClean[key] === 'object' && objectToClean[key] !== null;
+  return typeof object === 'object' && object !== null;
 }
 
 function clean(objectToClean = {}, { recursive } = {}) {

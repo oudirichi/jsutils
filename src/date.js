@@ -1,4 +1,4 @@
-function daysInMonth({ year, month = month + 1 }) {
+function daysInMonth({ year, month = month + 1 } = {}) {
   return new Date(year, month, 0).getDate();
 }
 

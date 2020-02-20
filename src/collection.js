@@ -1,4 +1,4 @@
-function hashMap(collection, key) {
+function indexBy(collection, key) {
   return collection.reduce((acc, object) => {
     acc[object[key]] = object;
 
@@ -7,5 +7,5 @@ function hashMap(collection, key) {
 }
 
 module.exports = {
-  hashMap,
+  indexBy,
 }
