@@ -4,7 +4,7 @@ function daysInMonth({ year, month = month + 1 } = {}) {
 
 function daysInMonthFromDate(date) {
   const year = date.getFullYear();
-  const month = date.getMonth(),
+  const month = date.getMonth();
 
   return daysInMonth({ year, month });
 }

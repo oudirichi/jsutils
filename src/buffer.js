@@ -6,7 +6,6 @@ function json() {
 
       try {
         let json = JSON.parse(Buffer.concat(this.buffer).toString('utf8'));
-        let json = JSON.parse(this.buffer.join(''));
         this.reset();
         return json;
 
@@ -20,6 +19,6 @@ function json() {
   };
 }
 
-module.exports = {
+export default {
   json,
 };

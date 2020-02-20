@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { charCode, unpack, pack } = require('../src/string');
+import { charCode, unpack, pack } from '../src/string';
 
 const { title } = require('./data');
 
