@@ -1,0 +1,1 @@
+"use strict";function indexBy(a,b){return a.reduce(function(a,c){return a[c[b]]=c,a},{})}module.exports={indexBy:indexBy};

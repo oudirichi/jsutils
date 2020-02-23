@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports["default"]=void 0;function json(){return{buffer:[],next:function next(a){this.buffer.push(a);try{var b=JSON.parse(Buffer.concat(this.buffer).toString("utf8"));return this.reset(),b}catch(a){return!1}},reset:function reset(){this.buffer.length=0}}}var _default={json:json};exports["default"]=_default;
