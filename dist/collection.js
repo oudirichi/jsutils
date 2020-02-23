@@ -1,1 +1,10 @@
-"use strict";function indexBy(a,b){return a.reduce(function(a,c){return a[c[b]]=c,a},{})}module.exports={indexBy:indexBy};
+function indexBy(collection, key) {
+  return collection.reduce((acc, object) => {
+    acc[object[key]] = object;
+    return acc;
+  }, {});
+}
+
+module.exports = {
+  indexBy
+};

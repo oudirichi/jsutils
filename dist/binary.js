@@ -1,1 +1,19 @@
-"use strict";var _require=require("./string"),charCode=_require.charCode;function toBinary(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:8,c=charCode(a).map(function(a){return a.toString(2).padStart(b,0)});return c.join(" ")}function toString(a){return a.split(" ").map(function(a){return String.fromCharCode(parseInt(a,2))}).join("")}module.exports={toBinary:toBinary,toString:toString};
+const {
+  charCode
+} = require('./string');
+
+function toBinary(string, pad = 8) {
+  const data = charCode(string).map(e => e.toString(2).padStart(pad, 0));
+  return data.join(' ');
+}
+
+function toString(string) {
+  return string.split(' ').map(function (char) {
+    return String.fromCharCode(parseInt(char, 2));
+  }).join('');
+}
+
+module.exports = {
+  toBinary,
+  toString
+};

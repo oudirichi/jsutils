@@ -1,1 +1,50 @@
-"use strict";function daysInMonth(){var a=0<arguments.length&&arguments[0]!==void 0?arguments[0]:{},b=a.year,c=a.month,d=void 0===c?d+1:c;return new Date(b,d,0).getDate()}function daysInMonthFromDate(a){var b=a.getFullYear(),c=a.getMonth();return daysInMonth({year:b,month:c})}function fullDate(a){var b=function(a){return 10>a?"0"+a:a};return{year:a.getFullYear(),month:b(a.getMonth()+1),day:b(a.getDate()),hours:b(a.getHours()),minutes:b(a.getMinutes()),seconds:b(a.getSeconds()),daysInMonth:daysInMonthFromDate(a)}}function timestamp(){var a=new Date,b=fullDate(a),c=b.year,d=b.month,e=b.day,f=b.hours,g=b.minutes,h=b.seconds,i="".concat(c).concat(d).concat(e),j="".concat(f).concat(g).concat(h);return i+j}module.exports={timestamp:timestamp,daysInMonth:daysInMonth,daysInMonthFromDate:daysInMonthFromDate};
+function daysInMonth({
+  year,
+  month = month + 1
+} = {}) {
+  return new Date(year, month, 0).getDate();
+}
+
+function daysInMonthFromDate(date) {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  return daysInMonth({
+    year,
+    month
+  });
+}
+
+function fullDate(date) {
+  const twoDegit = degit => degit < 10 ? "0" + degit : degit;
+
+  return {
+    year: date.getFullYear(),
+    month: twoDegit(date.getMonth() + 1),
+    day: twoDegit(date.getDate()),
+    hours: twoDegit(date.getHours()),
+    minutes: twoDegit(date.getMinutes()),
+    seconds: twoDegit(date.getSeconds()),
+    daysInMonth: daysInMonthFromDate(date)
+  };
+}
+
+function timestamp() {
+  const today = new Date();
+  const {
+    year,
+    month,
+    day,
+    hours,
+    minutes,
+    seconds
+  } = fullDate(today);
+  var date = `${year}${month}${day}`;
+  var time = `${hours}${minutes}${seconds}`;
+  return date + time;
+}
+
+module.exports = {
+  timestamp,
+  daysInMonth,
+  daysInMonthFromDate
+};

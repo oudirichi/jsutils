@@ -1,1 +1,12 @@
-"use strict";function streamToString(a){var b=[];return new Promise(function(c,d){a.on("data",function(a){return b.push(a)}),a.on("error",d),a.on("end",function(){return c(Buffer.concat(b).toString("utf8"))})})}module.exports={streamToString:streamToString};
+function streamToString(stream) {
+  const chunks = [];
+  return new Promise((resolve, reject) => {
+    stream.on('data', chunk => chunks.push(chunk));
+    stream.on('error', reject);
+    stream.on('end', () => resolve(Buffer.concat(chunks).toString('utf8')));
+  });
+}
+
+module.exports = {
+  streamToString
+};

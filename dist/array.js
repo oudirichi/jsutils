@@ -1,1 +1,9 @@
-"use strict";var _interopRequireDefault=require("@babel/runtime/helpers/interopRequireDefault"),_regenerator=_interopRequireDefault(require("@babel/runtime/regenerator")),_marked=/*#__PURE__*/_regenerator["default"].mark(range);function range(a,b){var c;return _regenerator["default"].wrap(function(d){for(;;)switch(d.prev=d.next){case 0:c=a;case 1:if(!(c<=b)){d.next=7;break}return d.next=4,c;case 4:c++,d.next=1;break;case 7:case"end":return d.stop();}},_marked)}module.exports={range:range};
+function* range(start, end) {
+  for (let i = start; i <= end; i++) {
+    yield i;
+  }
+}
+
+module.exports = {
+  range
+};

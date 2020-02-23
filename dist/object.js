@@ -1,1 +1,24 @@
-"use strict";var _interopRequireDefault=require("@babel/runtime/helpers/interopRequireDefault"),_typeof2=_interopRequireDefault(require("@babel/runtime/helpers/typeof"));function isObject(a){return"object"===(0,_typeof2["default"])(a)&&null!==a}function clean(){var a=0<arguments.length&&void 0!==arguments[0]?arguments[0]:{},b=1<arguments.length&&void 0!==arguments[1]?arguments[1]:{},c=b.recursive,d=function(b){return c&&isObject(a[b])},e={};return Object.keys(a).forEach(function(b){void 0!==a[b]&&(e[b]=d(b)?clean(a[b],{recursive:c}):a[b])}),e}module.exports={clean:clean,isObject:isObject};
+function isObject(object) {
+  return typeof object === 'object' && object !== null;
+}
+
+function clean(objectToClean = {}, {
+  recursive
+} = {}) {
+  const mustClean = key => recursive && isObject(objectToClean[key]);
+
+  const newObject = {};
+  Object.keys(objectToClean).forEach(key => {
+    if (objectToClean[key] !== undefined) {
+      newObject[key] = mustClean(key) ? clean(objectToClean[key], {
+        recursive
+      }) : objectToClean[key];
+    }
+  });
+  return newObject;
+}
+
+module.exports = {
+  clean,
+  isObject
+};
