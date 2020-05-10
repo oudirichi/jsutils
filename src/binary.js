@@ -12,8 +12,6 @@ function toString(string) {
   }).join('');
 }
 
-
-
 module.exports = {
   toBinary,
   toString,

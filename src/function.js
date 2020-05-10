@@ -15,21 +15,29 @@ function isSameType(a, b) {
   return getType(a) === getType(b);
 }
 
-// function memoize(fn) {
-//   const cache = {};
+function memoize(cb) {
+  const cached = {};
 
-//   return (...args) => {
-//     const params = JSON.stringify(args);
-//     if (!cache[params]) cache[params] = fn(...args);
+  const fn = (...args) => {
+    const key = JSON.stringify(args);
 
-//     return cache[params];
-//   };
-// }
+    if (!cached[key]) {
+      cached[key] = cb(...args);
+    }
+
+    return cached[key];
+  }
+
+  fn.cached = cached;
+  fn.original = cb;
+
+  return fn;
+}
 
 module.exports = {
   compose,
   pipe,
   getType,
   isSameType,
-  // memoize,
+  memoize,
 }

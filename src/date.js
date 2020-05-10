@@ -1,31 +1,33 @@
-function daysInMonth({ year, month = month + 1 } = {}) {
-  return new Date(year, month, 0).getDate();
-}
-
-function daysInMonthFromDate(date) {
+function daysInMonth(date) {
   const year = date.getFullYear();
   const month = date.getMonth();
 
-  return daysInMonth({ year, month });
+  return new Date(year, month, 0).getDate();
+}
+
+function pad(n) {
+  return n < 10 ? '0' + n : n;
 }
 
 function fullDate(date) {
-  const twoDegit = (degit) => (degit < 10) ? "0" + degit : degit;
-
   return {
     year: date.getFullYear(),
-    month: twoDegit(date.getMonth() + 1),
-    day: twoDegit(date.getDate()),
+    month: pad(date.getMonth() + 1),
+    day: pad(date.getDate()),
 
-    hours: twoDegit(date.getHours()),
-    minutes: twoDegit(date.getMinutes()),
-    seconds: twoDegit(date.getSeconds()),
+    hours: pad(date.getHours()),
+    minutes: pad(date.getMinutes()),
+    seconds: pad(date.getSeconds()),
 
-    daysInMonth: daysInMonthFromDate(date),
+    daysInMonth: daysInMonth(date),
   };
 }
 
-function timestamp() {
+function unixTimestamp(date = new Date()) {
+  return + date;
+}
+
+function currentTimestamp() {
   const today = new Date();
   const {
     year,
@@ -43,7 +45,8 @@ function timestamp() {
 }
 
 module.exports = {
-  timestamp,
+  pad,
+  currentTimestamp,
+  unixTimestamp,
   daysInMonth,
-  daysInMonthFromDate,
 }
