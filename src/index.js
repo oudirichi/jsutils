@@ -4,6 +4,7 @@ module.exports = {
   Buffer: require('./buffer'),
   Collection: require('./collection'),
   Date: require('./date'),
+  Event: require('./eventable'),
   Function: require('./function'),
   Object: require('./object'),
   Promise: require('./promise'),
