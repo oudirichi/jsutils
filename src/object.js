@@ -1,6 +1,5 @@
 function isObject(object) {
-  // return typeof object === 'object' && object !== null;
-  return (object instanceof Object);
+  return (object !== null && object instanceof Object && !Array.isArray(object));
 }
 
 function nullToUndefined(obj) {
@@ -50,6 +49,7 @@ function reject(raw, rejected) {
 }
 
 function only(raw, allowed) {
+  if (!Array.isArray(allowed)) allowed = [allowed];
   return Object.keys(raw)
     .filter(key => allowed.includes(key))
     .reduce((obj, key) => {
@@ -58,10 +58,43 @@ function only(raw, allowed) {
     }, {});
 }
 
-module.exports = {
+function every(obj, keys) {
+  if (!Array.isArray(keys)) keys = [keys];
+  return keys.every(item => Object.prototype.hasOwnProperty.call(obj, item));
+}
+
+function map(object, fn) {
+  return Object.keys(object).map((key) => fn(object[key], key));
+}
+
+const ret = {
   clean,
+  every,
+  map,
   isObject,
   nullToUndefined,
   reject,
   only,
+};
+
+
+function Obj(object) {
+  let inner = { ...object };
+
+  Object.keys(ret).forEach((fnName) => {
+    this[fnName] = (...args) => {
+      const result = ret[fnName](inner, ...args);
+      inner = result;
+      return this;
+    }
+  });
+
+  this.value = () => {
+    return inner;
+  }
+}
+
+module.exports = {
+  ...ret,
+  Obj,
 }
