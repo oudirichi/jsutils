@@ -48,6 +48,14 @@ function reject(raw, rejected) {
     }, {});
 }
 
+function isEmpty(obj) {
+  return Object.keys(obj).length == 0;
+}
+
+function any(obj) {
+  return !!Object.keys(obj).length > 0;
+}
+
 function only(raw, allowed) {
   if (!Array.isArray(allowed)) allowed = [allowed];
   return Object.keys(raw)
@@ -58,43 +66,28 @@ function only(raw, allowed) {
     }, {});
 }
 
-function every(obj, keys) {
+function present(obj, keys) {
   if (!Array.isArray(keys)) keys = [keys];
   return keys.every(item => Object.prototype.hasOwnProperty.call(obj, item));
+}
+
+function every(obj, callback) {
+  return Object.keys(obj).every((key) => callback(obj[key], key));
 }
 
 function map(object, fn) {
   return Object.keys(object).map((key) => fn(object[key], key));
 }
 
-const ret = {
+module.exports = {
+  any,
   clean,
   every,
-  map,
+  isEmpty,
   isObject,
+  map,
   nullToUndefined,
-  reject,
   only,
+  present,
+  reject,
 };
-
-
-function Obj(object) {
-  let inner = { ...object };
-
-  Object.keys(ret).forEach((fnName) => {
-    this[fnName] = (...args) => {
-      const result = ret[fnName](inner, ...args);
-      inner = result;
-      return this;
-    }
-  });
-
-  this.value = () => {
-    return inner;
-  }
-}
-
-module.exports = {
-  ...ret,
-  Obj,
-}
