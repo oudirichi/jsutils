@@ -10,6 +10,11 @@ function defer() {
   return deferred;
 }
 
+function isPromise(subject) {
+  return subject instanceof Promise;
+  // return isObject(subject) && typeof subject.then == 'function';
+}
 module.exports =  {
   defer,
+  isPromise,
 };

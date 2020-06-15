@@ -1,7 +1,6 @@
 module.exports = {
   Array: require('./array'),
   Binary: require('./binary'),
-  Buffer: require('./buffer'),
   Collection: require('./collection'),
   Date: require('./date'),
   Event: require('./eventable'),
