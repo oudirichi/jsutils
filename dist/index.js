@@ -1,0 +1,14 @@
+"use strict";
+
+module.exports = {
+  Array: require('./array'),
+  Binary: require('./binary'),
+  Collection: require('./collection'),
+  Date: require('./date'),
+  Event: require('./eventable'),
+  Function: require('./function'),
+  Object: require('./object'),
+  Promise: require('./promise'),
+  Stream: require('./stream'),
+  String: require('./string')
+};
