@@ -70,5 +70,9 @@
     "declaration": true,
     //"checkJs": true,
     "emitDeclarationOnly": false,
-  }
+  },
+
+  "include": [
+    "./src/**/*"
+  ]
 }

@@ -1,6 +1,6 @@
 import event from "./event";
 
-const mixin = (superclass) => class extends superclass {
+const eventableMixin = (superclass) => class extends superclass {
   constructor(...args) {
     super(...args);
 
@@ -11,4 +11,4 @@ const mixin = (superclass) => class extends superclass {
   }
 }
 
-export default mixin;
+export default eventableMixin;

@@ -1,12 +1,21 @@
-// module.exports = {
-  // Array: require('./array'),
-  // Binary: require('./binary'),
-  // Collection: require('./collection'),
-  // Date: require('./date'),
-  // Event: require('./eventable').default,
-  // Function: require('./function'),
-  // Object: require('./object'),
-  // Promise: require('./promise'),
-  // Stream: require('./stream'),
-  // String: require('./string'),
-// };
+import * as Arr from './array';
+import * as Col from './collection';
+import * as DateUtils from './date';
+import * as FunctionUtils from './function';
+import * as PromiseUtils from './promise';
+import event from './event';
+import eventableMixin from './eventableMixin';
+import Eventable from './eventable';
+import ObjectUtils from './object';
+
+export default {
+  ...Arr,
+  ...Col,
+  ...DateUtils,
+  Eventable,
+  event,
+  eventableMixin,
+  ...FunctionUtils,
+  ...ObjectUtils,
+  ...PromiseUtils,
+}
