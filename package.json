@@ -4,9 +4,9 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "test": "mocha --recursive --require @babel/register",
-    "lint": "./node_modules/.bin/eslint ./src ./test --ext .js",
-    "build": "babel src -d dist"
+    "test": "mocha -r ts-node/register tests/**/*.spec.ts",
+    "build": "tsc -p .",
+    "lint": "eslint ./src ./tests --ext .js,.ts"
   },
   "private": true,
   "repository": {
@@ -14,16 +14,19 @@
     "url": "https://github.com/oudirichi/jsutils.git"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.4",
-    "@babel/plugin-transform-runtime": "^7.8.3",
-    "@babel/preset-env": "^7.8.4",
-    "@babel/register": "^7.8.3",
+    "@types/chai": "^4.2.12",
+    "@types/mocha": "^8.0.3",
+    "@types/node": "^17.0.13",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
     "chai": "^4.2.0",
-    "eslint": "^6.2.2",
-    "mocha": "^7.0.1",
+    "eslint": "^8.8.0",
+    "eslint-plugin-mocha": "^10.0.3",
+    "mocha": "^7.2.0",
     "sinon": "^9.0.0",
-    "sinon-chai": "^3.5.0"
+    "sinon-chai": "^3.5.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.5.5"
   },
   "keywords": [],
   "files": [
