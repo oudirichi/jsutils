@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha -r ts-node/register tests/**/*.spec.ts",
     "build": "tsc -p .",
-    "lint": "eslint ./src ./tests --ext .js,.ts"
+    "lint": "eslint ./src ./tests --ext .js,.ts",
+    "prepublish": "npm run build"
   },
   "private": true,
   "repository": {
@@ -30,11 +31,10 @@
   },
   "keywords": [],
   "files": [
-    "dist"
+    "dist/*.js",
+    "dist/**/*.js"
   ],
+
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@babel/runtime": "^7.8.4"
-  }
+  "license": "MIT"
 }
