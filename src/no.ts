@@ -1,1 +1,1 @@
-export default function no(): boolean { return false; };
+export default function no(): boolean { return false }

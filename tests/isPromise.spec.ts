@@ -4,6 +4,7 @@ import { expect } from 'chai';
 describe('.isPromise', () => {
   context('when promise given', function() {
     it('should return true', function() {
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       const prom = new Promise(() => {});
       expect(isPromise(prom)).to.be.true;
     });
@@ -42,12 +43,14 @@ describe('.isPromise', () => {
 
   context('when arrow function given', function() {
     it('should return false', function() {
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       expect(isPromise(() => {})).to.be.false;
     });
   });
 
   context('when function given', function() {
     it('should return false', function() {
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       expect(isPromise(function() {})).to.be.false;
     });
   });
