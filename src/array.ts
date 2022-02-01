@@ -1,13 +1,12 @@
 import uniq from "./uniq";
 import flatten from "./flatten";
-import concat from "./concat";
+import union from "./union";
 import intersection from "./intersection";
 import difference from "./difference";
 
-export const union = concat;
 export {
   intersection,
-  concat,
+  union,
   difference,
   uniq,
   flatten,
