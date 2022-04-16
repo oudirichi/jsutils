@@ -1,7 +1,3 @@
-function isObject(object) {
-  return (object !== null && object instanceof Object && !Array.isArray(object));
-}
-
 function nullToUndefined(obj) {
   if (obj === null) return undefined;
   if (!(obj instanceof Object)) return obj;
@@ -75,17 +71,11 @@ function every(obj, callback) {
   return Object.keys(obj).every((key) => callback(obj[key], key));
 }
 
-function map(object, fn) {
-  return Object.keys(object).map((key) => fn(object[key], key));
-}
-
 module.exports = {
   any,
   clean,
   every,
   isEmpty,
-  isObject,
-  map,
   nullToUndefined,
   only,
   present,

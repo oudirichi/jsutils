@@ -1,18 +1,18 @@
-interface Reject {
-  (reason?: unknown): void
+interface Reject<T> {
+  (reason: T): void
 }
 
 interface Resolve<T> {
   (resolve: T): void
 }
 
-interface Deferred<T> {
-  reject: Reject,
+interface Deferred<T, E> {
+  reject: Reject<E>,
   resolve: Resolve<T>,
   promise: Promise<T>
 }
 
-function defer<T>(): Deferred<T> {
+function defer<T = unknown, E = unknown>(): Deferred<T,E> {
   let promiseResolve;
   let promiseReject;
 
@@ -21,7 +21,7 @@ function defer<T>(): Deferred<T> {
     promiseReject = reject;
   });
 
-  const deferred: Deferred<T> = {
+  const deferred: Deferred<T, E> = {
     promise,
     reject: promiseReject,
     resolve: promiseResolve,

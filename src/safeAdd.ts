@@ -1,6 +1,8 @@
-type recordKey = string | number | symbol;
+import {
+  RecordKey,
+} from './types/object'
 
-function safeAdd<T>(obj: Record<recordKey, T>, key: recordKey, item: T): T  {
+function safeAdd<T>(obj: Record<RecordKey, T>, key: RecordKey, item: T): T  {
     if (!(key in obj)) obj[key] = item;
     return obj[key];
   }
