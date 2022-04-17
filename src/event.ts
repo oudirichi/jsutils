@@ -1,5 +1,5 @@
 import Eventable from './eventable';
 
-export default function event(): Eventable {
+export = function event(): Eventable {
   return new Eventable();
 }

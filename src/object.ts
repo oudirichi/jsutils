@@ -21,7 +21,7 @@ function nullToUndefined(obj) {
   return ret;
 }
 
-function clean(objectToClean = {}, { recursive } = {}) {
+function clean(objectToClean = {}, { recursive } = { recursive: false }) {
   const mustClean = key => (recursive && (objectToClean[key] instanceof Object));
   const newObject = {};
 
@@ -45,11 +45,11 @@ function reject(raw, rejected) {
 }
 
 function isEmpty(obj) {
-  return Object.keys(obj).length == 0;
+  return (Object.keys(obj).length == 0);
 }
 
 function any(obj) {
-  return !!Object.keys(obj).length > 0;
+  return !!(Object.keys(obj).length > 0);
 }
 
 function only(raw, allowed) {
@@ -71,7 +71,7 @@ function every(obj, callback) {
   return Object.keys(obj).every((key) => callback(obj[key], key));
 }
 
-module.exports = {
+export = {
   any,
   clean,
   every,

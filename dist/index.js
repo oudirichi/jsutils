@@ -2,32 +2,31 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-const daysInMonth_1 = __importDefault(require("./daysInMonth"));
-const defer_1 = __importDefault(require("./defer"));
-const difference_1 = __importDefault(require("./difference"));
-const event_1 = __importDefault(require("./event"));
-const eventable_1 = __importDefault(require("./eventable"));
-const flatten_1 = __importDefault(require("./flatten"));
-const intersection_1 = __importDefault(require("./intersection"));
-const isObject_1 = __importDefault(require("./isObject"));
-const isPromise_1 = __importDefault(require("./isPromise"));
-const map_1 = __importDefault(require("./map"));
-const no_1 = __importDefault(require("./no"));
-const noop_1 = __importDefault(require("./noop"));
-const object_1 = __importDefault(require("./object"));
-const pipe_1 = __importDefault(require("./pipe"));
-const reduce_1 = __importDefault(require("./reduce"));
-const safeAdd_1 = __importDefault(require("./safeAdd"));
-const sleep_1 = __importDefault(require("./sleep"));
-const stringTemplate_1 = __importDefault(require("./stringTemplate"));
-const timestamp_1 = __importDefault(require("./timestamp"));
-const union_1 = __importDefault(require("./union"));
-const uniq_1 = __importDefault(require("./uniq"));
-const yes_1 = __importDefault(require("./yes"));
-const ymd_1 = __importDefault(require("./ymd"));
-const ymdhms_1 = __importDefault(require("./ymdhms"));
-exports.default = {
+var daysInMonth_1 = __importDefault(require("./daysInMonth"));
+var defer_1 = __importDefault(require("./defer"));
+var difference_1 = __importDefault(require("./difference"));
+var event_1 = __importDefault(require("./event"));
+var eventable_1 = __importDefault(require("./eventable"));
+var flatten_1 = __importDefault(require("./flatten"));
+var intersection_1 = __importDefault(require("./intersection"));
+var isObject_1 = __importDefault(require("./isObject"));
+var isPromise_1 = __importDefault(require("./isPromise"));
+var map_1 = __importDefault(require("./map"));
+var no_1 = __importDefault(require("./no"));
+var noop_1 = __importDefault(require("./noop"));
+var object_1 = __importDefault(require("./object"));
+var pipe_1 = __importDefault(require("./pipe"));
+var reduce_1 = __importDefault(require("./reduce"));
+var safeAdd_1 = __importDefault(require("./safeAdd"));
+var sleep_1 = __importDefault(require("./sleep"));
+var stringTemplate_1 = __importDefault(require("./stringTemplate"));
+var timestamp_1 = __importDefault(require("./timestamp"));
+var union_1 = __importDefault(require("./union"));
+var uniq_1 = __importDefault(require("./uniq"));
+var yes_1 = __importDefault(require("./yes"));
+var ymd_1 = __importDefault(require("./ymd"));
+var ymdhms_1 = __importDefault(require("./ymdhms"));
+module.exports = {
     daysInMonth: daysInMonth_1.default,
     defer: defer_1.default,
     difference: difference_1.default,

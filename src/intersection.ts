@@ -8,4 +8,4 @@ function intersection(arr1: any, ...arrs: any[]): any {
   return uniq(arr1.filter((value) => value in indexed));
 }
 
-export default intersection;
+export = intersection;

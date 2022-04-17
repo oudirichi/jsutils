@@ -6,4 +6,4 @@ declare class Eventable {
     clear(event: string | undefined): void;
     emit(event: string, ...args: any[]): boolean;
 }
-export default Eventable;
+export = Eventable;

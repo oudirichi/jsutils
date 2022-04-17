@@ -11,4 +11,4 @@ function difference(arr1: any[], ...arrs: any[]) {
   return uniq(arr1.filter((value) => !(value in indexed)));
 }
 
-export default difference;
+export = difference;

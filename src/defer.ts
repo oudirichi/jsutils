@@ -30,4 +30,4 @@ function defer<T = unknown, E = unknown>(): Deferred<T,E> {
   return deferred;
 }
 
-export default defer;
+export = defer;

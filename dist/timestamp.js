@@ -1,6 +1,6 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-function timestamp(date = new Date()) {
+function timestamp(date) {
+    if (date === void 0) { date = new Date(); }
     return +date;
 }
-exports.default = timestamp;
+module.exports = timestamp;

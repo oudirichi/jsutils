@@ -24,7 +24,7 @@ import yes from "./yes";
 import ymd from "./ymd";
 import ymdhms from "./ymdhms";
 
-export default {
+export = {
   daysInMonth,
   defer,
   difference,

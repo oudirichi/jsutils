@@ -1,6 +1,6 @@
 import ymd from "./ymd";
 
-export default function ymdhms(datetime = new Date()): string {
+export = function ymdhms(datetime = new Date()): string {
   const hour = datetime.getHours();
   const minute = datetime.getMinutes();
   const second = datetime.getSeconds();

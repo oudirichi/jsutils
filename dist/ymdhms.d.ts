@@ -1,1 +1,2 @@
-export default function ymdhms(datetime?: Date): string;
+declare const _default: (datetime?: Date) => string;
+export = _default;

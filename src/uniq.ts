@@ -8,4 +8,4 @@ function uniq(arr: number | string | Array<number|string>): Array<number|string>
   return Array.from(new Set(arr));
 }
 
-export default uniq;
+export = uniq;

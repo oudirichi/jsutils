@@ -1,1 +1,2 @@
-export default function yes(): boolean;
+declare const _default: () => boolean;
+export = _default;

@@ -10,4 +10,4 @@ interface Deferred<T, E> {
     promise: Promise<T>;
 }
 declare function defer<T = unknown, E = unknown>(): Deferred<T, E>;
-export default defer;
+export = defer;

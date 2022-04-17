@@ -5,4 +5,4 @@ function pipe(...functions) {
 }
 
 
-export default pipe;
+export = pipe;

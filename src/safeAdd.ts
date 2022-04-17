@@ -7,4 +7,4 @@ function safeAdd<T>(obj: Record<RecordKey, T>, key: RecordKey, item: T): T  {
     return obj[key];
   }
 
-  export default safeAdd;
+  export = safeAdd;

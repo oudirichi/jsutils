@@ -1,2 +1,3 @@
 import Eventable from './eventable';
-export default function event(): Eventable;
+declare const _default: () => Eventable;
+export = _default;

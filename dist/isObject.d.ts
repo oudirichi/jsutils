@@ -1,1 +1,2 @@
-export default function isObject(val: unknown): val is Record<any, any>;
+declare const _default: (val: unknown) => val is Record<any, any>;
+export = _default;

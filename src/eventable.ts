@@ -36,4 +36,4 @@ class Eventable {
   }
 }
 
-export default Eventable;
+export = Eventable;

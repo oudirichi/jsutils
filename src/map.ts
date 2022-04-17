@@ -9,4 +9,4 @@ function map(object, fn) {
 }
 
 
-export default map;
+export = map;

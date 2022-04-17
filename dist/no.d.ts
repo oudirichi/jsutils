@@ -1,1 +1,2 @@
-export default function no(): boolean;
+declare const _default: () => boolean;
+export = _default;

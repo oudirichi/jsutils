@@ -1,1 +1,1 @@
-export default function yes(): boolean { return true }
+export = function yes(): boolean { return true }

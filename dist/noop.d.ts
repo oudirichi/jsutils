@@ -1,1 +1,2 @@
-export default function noop(): void;
+declare const _default: () => void;
+export = _default;

@@ -5,4 +5,4 @@ function union(arr1: any[], ...arrs: any[]): any[] {
   return uniq(arr1.concat(...arrs));
 }
 
-export default union;
+export = union;

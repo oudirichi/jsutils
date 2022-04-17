@@ -1,4 +1,4 @@
-import { isObject } from "./object";
+import isObject from "./isObject";
 
 function reduce(item, fn, startAcc=[]) {
   if (isObject(item)) {
@@ -8,4 +8,4 @@ function reduce(item, fn, startAcc=[]) {
   }
 }
 
-export default reduce;
+export = reduce;
